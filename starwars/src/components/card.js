@@ -8,17 +8,20 @@ const CardDiv = styled.div`
 `;
 
 const Info = styled.div`
-    border: 1px solid red;
+    // border: 1px solid red;
+    background-color: #FFE5C0;
+    border-radius: 10px;
 `;
 
 const Name = styled.h2`
     background-color: black;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    border-radius: 10px;
 `;
 
 
-const Card = ({name, birth, eye, height, hair, home, species})=>{
+const Card = ({name, birth, eye, height, hair})=>{
 
     return(
         
@@ -29,8 +32,6 @@ const Card = ({name, birth, eye, height, hair, home, species})=>{
                 <h2>Eye: {eye}</h2>
                 <h2>Height: {height}</h2>
                 <h2>Hair Color: {hair}</h2>
-                <h2>Home: {home}</h2>
-                <h2>species: {species}</h2>
             </Info>
         </CardDiv>
 

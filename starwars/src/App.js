@@ -17,7 +17,7 @@ const App = () => {
 
   const [warsObj, setWarsObj] = useState([]);
   useEffect(()=>{
-    axios.get('https://swapi.co/api/people/')
+    axios.get('https://henry-mock-swapi.herokuapp.com/api')
       .then(file =>{
         console.log(file.data.results);
         setWarsObj(file.data.results);
@@ -28,13 +28,24 @@ const App = () => {
 
   },[])
 
-  console.log("warsObj", warsObj);
+  const [home, setHome] = useState([]);
+  useEffect(()=>{
+    axios.get('https://swapi.co/api/planets/')
+      .then(file =>{
+        setHome(file.data.results);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+
+  },[])
+
+  console.log("warsObj", home);
 
   const AlignCard = styled.div`
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    border: 4px solid blue;
 
 `;
  
@@ -51,9 +62,7 @@ const App = () => {
               birth={element.birth_year}
               eye={element.eye_color}
               height={element.height}
-              hair={element.hair}
-              home={element.home}
-              species={element.species}
+              hair={element.hair_color}
               
               />)
         }
